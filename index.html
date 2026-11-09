@@ -4,15 +4,27 @@
 
 </head>
 <body>
-        <button onclick="openTabs()">Compare Items</button>
+       <button onclick="openTabs()">Compare Items</button>
 
 <script>
 function openTabs() {
-    window.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ6vFT4334mrnNxWVWK3RFvOvN544eSuIiiiftABY9cLRVTZnzaiLY-QMX&s=10", "_blank");
-    window.open("https://roblox.com", "_blank");
+    const urls = [
+        "https://www.example.com/item1",
+        "https://www.example.com/item2"
+    ];
 
-    window.close
+    urls.forEach(url => {
+        const newTab = document.createElement("a");
+        newTab.href = url;
+        newTab.target = "_blank";
+        newTab.rel = "noopener";
+
+        document.body.appendChild(newTab);
+        newTab.click();
+        newTab.remove();
+    });
 }
+</script>
 </script>
 </body>
 </html>
